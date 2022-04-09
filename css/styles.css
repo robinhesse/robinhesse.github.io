@@ -59,6 +59,7 @@ body {
   background-color: rgb(255, 255, 255);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-display: swap;
 }
 
 hr {
@@ -80,6 +81,7 @@ h1, .h1 {
   font-weight: 500;
   line-height: 1.2;
   color: #343a40;
+  font-display: swap;
 }
 
 h2, .h2 {
@@ -90,6 +92,7 @@ h2, .h2 {
   font-weight: 500;
   line-height: 1.2;
   color: #343a40;
+  font-display: swap;
 }
 
 h6, .h6, h5, .h5, h4, .h4, h3, .h3 {
@@ -99,6 +102,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3 {
   font-weight: 500;
   line-height: 1.2;
   color: #343a40;
+  font-display: swap;
 }
 
 h1, .h1 {
@@ -248,6 +252,7 @@ samp {
   font-size: 1em;
   direction: ltr /* rtl:ignore */;
   unicode-bidi: bidi-override;
+  font-display: swap;
 }
 
 pre {
@@ -343,6 +348,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  font-display: swap;
 }
 
 button,
@@ -5549,6 +5555,7 @@ textarea.form-control-lg {
   font-size: 0.875rem;
   word-wrap: break-word;
   opacity: 0;
+  font-display: swap;
 }
 .tooltip.show {
   opacity: 0.9;
@@ -5654,6 +5661,7 @@ textarea.form-control-lg {
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
+  font-display: swap;
 }
 .popover .popover-arrow {
   position: absolute;
@@ -7234,6 +7242,7 @@ textarea.form-control-lg {
 
 .font-monospace {
   font-family: var(--bs-font-monospace) !important;
+  font-display: swap;
 }
 
 .fs-1 {
@@ -10906,6 +10915,7 @@ p.lead {
   text-transform: none;
   font-weight: 400;
   font-size: 1.4rem;
+  font-display: swap;
 }
 
 #sideNav {
@@ -11285,6 +11295,7 @@ section.resume-section .resume-section-content {
   text-align: justify;
   font-family: 'Times New Roman', Times, serif;
   line-height: 1.2;
+  font-display: swap;
 }
 
 @media (max-width: 768px) {
