@@ -485,7 +485,7 @@ progress {
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
-  text-align: justify;
+  text-align: start;
 }
 
 .display-1 {
@@ -11292,7 +11292,7 @@ section.resume-section .resume-section-content {
   font-size: 1.0rem;
   font-weight: normal;
   margin-bottom: 0;
-  text-align: justify;
+  text-align: start;
   font-family: 'Times New Roman', Times, serif;
   line-height: 1.2;
   font-display: swap;
@@ -11393,7 +11393,12 @@ section.resume-section .resume-section-content {
   margin-top: 0px;
 }
 
-
+.news {
+  color: inherit;
+  font-size: 1.0rem;
+  text-transform: none;
+  font-weight: normal;
+}
 
 .publication-icons .publication-icon {
   display: inline-flex;
@@ -11418,7 +11423,7 @@ section.resume-section .resume-section-content {
 
 
 .experience-detail {
-  text-align: justify;
+  text-align: start;
   font-size: 1.0rem;
   font-weight: normal;
   line-height: 1.4;
