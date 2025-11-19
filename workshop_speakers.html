@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Personal website of Robin Hesse" />
+        <meta name="author" content="Robin Hesse" />
+        <meta name="keywords" content="Robin Hesse" />
+        <meta name="google-site-verification" content="aJTig5Wye0zCQ3WilZ53PAzk4UkliesD5ShCWYeoK9w" />
+        <title>Robin Hesse</title>
+        <link rel="icon" href="assets/img/funnybird.png" type="image/png">
+        
+        <!-- Font Awesome icons (free version)-->
+        <!--script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script-->
+        <script src="https://kit.fontawesome.com/9d53e8d9fd.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
+        <!-- Google fonts-->
+        <!--link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="preload" as="style" type="text/css" onload="this.onload=null; this.rel='stylesheet'; document.body.classList.add('fontLoaded')"/-->
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i&display=swap" rel="stylesheet" rel="preload" as="font" type="text/css"/>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            :root{
+            --bg:#0b0c10; --panel:#c2c2c2; --text:#454545; --muted:#aab2bf; --border:#1e2027; --accent:#7aa2ff;
+            }
+            *{box-sizing:border-box}
+            body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--text);}
+            .wrap{max-width:960px;margin:0 auto;padding:24px}
+            h1{font-size:clamp(20px,2.2vw,28px);margin:0 0 16px}
+
+
+            
+
+
+            table{width:100%;border-collapse:collapse;font-size:15px}
+            thead th{top:0;background:#dddddd;z-index:1;text-align:left;padding:12px;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
+            tbody td{padding:10px 12px;border-bottom:1px solid var(--border)}
+
+
+            /* Wrapping rule: keep table readable and wrap long content */
+            td, th{max-width:260px; /* tweak width target */
+            overflow-wrap:anywhere; /* modern */
+            word-break:break-word; /* fallback */
+            white-space:normal;}
+
+
+            /* Sort indicators via aria-sort */
+            th .sort{opacity:.6;font-size:11px;margin-left:6px}
+            th[aria-sort="ascending"] .sort::after{content:"▲"}
+            th[aria-sort="descending"] .sort::after{content:"▼"}
+            th[aria-sort="none"] .sort::after{content:"↕"}
+
+            th:nth-child(1), td:nth-child(1) { width: 25%; } /* Speaker */
+            th:nth-child(2), td:nth-child(2) { width: 60%; } /* Workshop */
+            th:nth-child(3), td:nth-child(3) { width: 15%; } /* Date */
+            /*th:nth-child(4), td:nth-child(4) { width: 10%; }*/ /* Time */
+
+            /* Speaker */
+            th:nth-child(1), td:nth-child(1) {
+            min-width: 160px;
+            }
+
+            /* Workshop */
+            th:nth-child(2), td:nth-child(2) {
+            min-width: 160px;
+            }
+
+            /* Date */
+            th:nth-child(3), td:nth-child(3) {
+            min-width: 120px;
+            white-space: nowrap;  /* prevents breaking */
+            }
+
+            /* Time */
+            /*
+            th:nth-child(4), td:nth-child(4) {
+            min-width: 80px;
+            white-space: nowrap;
+            }
+            */
+
+
+            .note{color:var(--muted);font-size:14px;padding:10px 12px}
+            </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+            <a class="navbar-brand js-scroll-trigger" href="index.html#page-top">
+                <span class="d-block d-lg-none">Robin Hesse</span>
+                <!--span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="..." /></span-->
+                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile_x.jpg" alt="..." /></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#news">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#publications">Publications</a></li>
+                    <!--li class="nav-item"><a class="nav-link js-scroll-trigger" href="#timeline">Timeline</a></li-->
+                    <li class="nav-item"><a class="nav-link" href="index.html#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#experience">Experience</a></li>
+                    <li><hr class="navbar-divider"></li>
+                    <li class="nav-item"><a class="nav-link static-active" href="workshop_speakers.html">Conference Workshop Speakers</a></li>
+                    <!--li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li-->
+                    <!--li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li-->
+                    <!--li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Awards</a></li-->
+                </ul>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <div class="container-fluid p-0">
+            <section class="resume-section" id="news">
+                <div class="resume-section-content">
+                    
+                    <div class="text-center">
+                        <h2 class="mb-5">Conference Workshop Speakers</h2>
+                    </div>
+                    <p class="lead mb-5">Ever missed an exciting speaker at a CV or ML conference because their workshop was outside your usual interests? Now you can explore all workshop speakers in one place — no need to open every workshop page individually.</p>
+                    <div class="mb-3" style="display:flex; gap:12px; align-items:end; flex-wrap:wrap;">
+                        <div>
+                            <label for="dataset" style="display:block; font-size:.9rem; opacity:.8;">Select conference</label>
+                            <select id="dataset" class="form-select">
+                            <!-- Make sure these paths are correct and point to your local CSVs -->
+                            <option value="assets/workshop_speakers/neurips_2025.csv" selected>NeurIPS 2025</option>
+                            <option value="assets/workshop_speakers/eurips_2025.csv">EurIPS 2025</option>
+                            <option value="assets/workshop_speakers/neurips_mexico_2025.csv">NeurIPS 2025 (Mexico City)</option>
+                            <option value="assets/workshop_speakers/iccv_2025.csv">ICCV 2025</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="searchSpeaker" style="display:block; font-size:.9rem; opacity:.8;">Search speaker</label>
+                            <input id="searchSpeaker" class="form-control" type="search" placeholder="Type a name…">
+                        </div>
+                    </div>
+
+                    <section class="panel">
+                        <div class="table-wrap" role="region" aria-label="Results" tabindex="0">
+                        <table id="table" aria-describedby="desc">
+                        <caption id="desc" class="note">Disclaimer: The workshop information has been compiled from multiple public sources with differing formats. While every effort has been made to ensure accuracy, the completeness and correctness of the data cannot be guaranteed. Additionally, recent updates or schedule changes may not yet be reflected in this table.</caption>
+                        <thead>
+                        <tr>
+                        <th data-key="Speaker" aria-sort="none" scope="col">Speaker <span aria-hidden="true" class="sort"></span></th>
+                        <th data-key="Workshop" aria-sort="none" scope="col">Workshop <span aria-hidden="true" class="sort"></span></th>
+                        <th data-key="Date" aria-sort="none" scope="col">Date <span aria-hidden="true" class="sort"></span></th>
+                        <!--th data-key="Time" aria-sort="none" scope="col">Time <span aria-hidden="true" class="sort"></span></th-->
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        </table>
+                        </div>
+                        </section>
+                </div>
+            </section>
+            <hr class="m-0" />
+
+            <footer class="footer py-4">
+                <div class="container">
+                    <div class="text-center mt-5">
+                            Copyright &copy; Robin Hesse 2025
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script>
+            (function(){
+            const table = document.getElementById('table');
+            const tbody = table.querySelector('tbody');
+            const headers = Array.from(table.querySelectorAll('thead th'));
+            const datasetEl = document.getElementById('dataset');
+            const searchEl  = document.getElementById('searchSpeaker');
+
+            let allRows = [];       // full dataset loaded from CSV
+            let sortKey = null;     // 'Speaker' | 'Workshop' | 'Date' | 'Time'
+            let sortDir = 'asc';    // 'asc' | 'desc'
+
+            // --- helpers ---
+            function debounce(fn, ms=200){
+                let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn.apply(null,args), ms); };
+            }
+
+            function parseDateTime(dateStr, timeStr){
+                if(!dateStr && !timeStr) return NaN;
+                const iso = timeStr ? `${dateStr}T${timeStr}` : dateStr;
+                return new Date(iso).getTime();
+            }
+
+            function setHeaderState(key, dir){
+                headers.forEach(h => h.setAttribute('aria-sort','none'));
+                if(!key) return;
+                const th = headers.find(h => h.dataset.key === key);
+                if(th) th.setAttribute('aria-sort', dir === 'asc' ? 'ascending' : 'descending');
+            }
+
+            function filterRows(rows){
+                const q = (searchEl?.value || '').trim().toLowerCase();
+                if(!q) return rows;
+                return rows.filter(r => (r.Speaker || '').toLowerCase().includes(q));
+            }
+
+            function sortRows(rows){
+                if(!sortKey) return rows.slice();
+                return rows.slice().sort((a,b) => {
+                if (sortKey === 'Date' || sortKey === 'Time') {
+                    const at = parseDateTime(a.Date, a.Time);
+                    const bt = parseDateTime(b.Date, b.Time);
+                    return sortDir === 'asc' ? (at - bt) : (bt - at);
+                }
+                const ax = (a[sortKey] || '').toLowerCase();
+                const bx = (b[sortKey] || '').toLowerCase();
+                if(ax < bx) return sortDir === 'asc' ? -1 : 1;
+                if(ax > bx) return sortDir === 'asc' ? 1 : -1;
+                return 0;
+                });
+            }
+
+            function render(){
+                const filtered = filterRows ? filterRows(allRows) : allRows;   // if you use filtering
+                const data = sortRows ? sortRows(filtered) : filtered;         // if you use sorting
+
+                tbody.innerHTML = '';
+                if (!data.length) {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = '<td colspan="4" style="padding:12px; opacity:.7;">No matching speakers.</td>';
+                    tbody.appendChild(tr);
+                    return;
+                }
+
+                const frag = document.createDocumentFragment();
+
+                data.forEach(r => {
+                    const tr = document.createElement('tr');
+
+                    // Speaker
+                    const tdSpeaker = document.createElement('td');
+                    tdSpeaker.textContent = r.Speaker ?? '';
+                    tr.appendChild(tdSpeaker);
+
+                    // Workshop (make it a link if it looks like a URL)
+                    const tdWorkshop = document.createElement('td');
+                    const url = (r.Workshop || '').trim();
+                    if (/^https?:\/\//i.test(url)) {
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.target = '_blank';
+                    a.rel = 'noopener noreferrer';
+                    a.textContent = url;
+                    tdWorkshop.appendChild(a);
+                    } else {
+                    tdWorkshop.textContent = r.Workshop ?? '';
+                    }
+                    tr.appendChild(tdWorkshop);
+
+                    // Date
+                    const tdDate = document.createElement('td');
+                    tdDate.textContent = r.Date ?? '';
+                    tr.appendChild(tdDate);
+
+                    // Time
+                    //const tdTime = document.createElement('td');
+                    //tdTime.textContent = r.Time ?? '';
+                    //tr.appendChild(tdTime);
+
+                    frag.appendChild(tr);
+                });
+
+                tbody.appendChild(frag);
+                }
+
+            async function loadCSV(url){
+                try {
+                const text = await fetch(url, { cache: 'no-store' }).then(r => r.text());
+                const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
+                allRows = (parsed.data || []).map(row => ({
+                    Speaker: row.Speaker ?? row.speaker ?? row.Name ?? row.name ?? '',
+                    Workshop: row.Workshop ?? row.workshop ?? row.Topic ?? row.topic ?? '',
+                    Date: row.Date ?? row.date ?? '',
+                    Time: row.Time ?? row.time ?? ''
+                }));
+                render();
+                } catch (err) {
+                console.error('CSV load failed:', err);
+                tbody.innerHTML = `<tr><td colspan="4" style="padding:12px; opacity:.7;">Failed to load ${url}</td></tr>`;
+                }
+            }
+
+            // --- events ---
+            headers.forEach(th => th.addEventListener('click', () => {
+                const key = th.dataset.key;
+                if(sortKey === key){
+                sortDir = (sortDir === 'asc') ? 'desc' : 'asc';
+                } else {
+                sortKey = key; sortDir = 'asc';
+                }
+                setHeaderState(sortKey, sortDir);
+                render();
+            }));
+
+            datasetEl.addEventListener('change', () => {
+                loadCSV(datasetEl.value);
+            });
+
+            if (searchEl) {
+                const onType = debounce(() => render(), 160);
+                searchEl.addEventListener('input', onType);
+            }
+
+            // Load default dataset on page ready
+            window.addEventListener('DOMContentLoaded', () => {
+                loadCSV(datasetEl.value);
+            });
+            })();
+            </script>
+    </body>
+</html>

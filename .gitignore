@@ -1,0 +1,4 @@
+# Exclude Apple Numbers documents
+*.numbers
+*_raw*
+*.DS_Store

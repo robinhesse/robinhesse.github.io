@@ -4281,6 +4281,31 @@ textarea.form-control-lg {
   color: #fff;
 }
 
+.navbar-divider {
+  border: none;
+  border-top: 2px solid rgba(255, 255, 255, 0.75); /* adjust color for your theme */
+  width: 2cm;
+  margin: 0.5rem 0; /* centers the line */
+}
+@media (min-width: 992px) {
+
+  .navbar-divider {
+    border: none;
+    border-top: 2px solid rgba(255, 255, 255, 0.75); /* adjust color for your theme */
+    width: 2cm;
+    margin: 0.5rem auto; /* centers the line */
+  }
+
+}
+
+.nav-link.static-active {
+  color: #fff !important;              /* text color */
+  background-color: #bd5d38 !important; /* highlight color */
+  font-weight: 600;
+  border-radius: 0.25rem;
+}
+
+
 .card {
   position: relative;
   display: flex;
