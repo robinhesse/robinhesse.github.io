@@ -28,9 +28,16 @@
             .wrap{max-width:960px;margin:0 auto;padding:24px}
             h1{font-size:clamp(20px,2.2vw,28px);margin:0 0 16px}
 
-
+            html, body {
+            max-width: 100%;
+            overflow-x: hidden;   /* no horizontal scroll on the full page */
+            }
             
-
+            .table-wrap {
+            width: 100%;
+            overflow-x: auto;              /* horizontal scroll only inside this container */
+            -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+            }
 
             table{width:100%;border-collapse:collapse;font-size:15px}
             thead th{top:0;background:#dddddd;z-index:1;text-align:left;padding:12px;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
